@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+require 'pry'
 require_relative "meetup_cli/version"
 require_relative "meetup_cli/cli"
 
