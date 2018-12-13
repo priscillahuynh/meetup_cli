@@ -5,7 +5,14 @@ class Scraper
     heading = page.css('h3.padding-none').text.gsub("\t", "")
     new_heading = heading.gsub("\n","")
     heading_array = new_heading.split("                        ")
+    heading_array.each.with_index(1) do |event, index|
+      puts "#{index}. #{event}"
+    end
+    members = page.css('p.small.ellipsize').text.gsub("\t", "")
+    new_members = members.split("\n")
+    members_array = new_members.select {|n| n != """"}
     binding.pry
-    # .gsub(/\s+/, "")
   end
+  
+  
 end
