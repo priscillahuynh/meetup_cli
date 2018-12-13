@@ -3,8 +3,8 @@ class Meetup
   @@all = []
   
   def initialize(name, members)
-    name = name
-    members = members
+    @name = name
+    @members = members
     @@all << self
   end
   

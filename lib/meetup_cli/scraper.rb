@@ -7,14 +7,5 @@ class Scraper
       members = m.search('p.small.ellipsize').text.strip
       meetup = Meetup.new(name,members)
     end
-    # --------------------------
-    # heading_array = page.css('h3.padding-none').text.gsub("\t", "").gsub("\n","").split("                        ")
-    # heading_array.each do |meetup|
-    # name = meetup
-    # end
-    # members_array = page.css('p.small.ellipsize').text.gsub("\t", "").split("\n").select {|n| n != """"}
-    # members_array.each do |m|
-    #   members = 
-    # # -------------------------
   end
 end
