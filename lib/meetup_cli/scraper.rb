@@ -5,7 +5,7 @@ class Scraper
     page.css('.groupCard--content.nametag-photo-name.groupCard--title').each_with_index do |m,index|
       name = m.search('h3.padding-none').text.strip
       members = m.search('p.small.ellipsize').text.strip
-      meetup = Meetup.new(name,members)
+      meetup = Meetup.new(name, members)
     end
   end
 end
