@@ -1,10 +1,12 @@
 class Meetup
-  attr_accessor :name, :members
+  attr_accessor :name, :members, :url, :info 
   @@all = []
   
-  def initialize(name, members)
+  def initialize(name, members, url, info)
     @name = name
     @members = members
+    @url = url
+    @info = info
     @@all << self
   end
   
