@@ -23,6 +23,7 @@ class Scraper
   end
   
   def self.scrape_meetup_page(url)
+  page = Nokogiri::HTML(open(url))
   page.css('div.group-description--wrapper').each do |text|
       info = text.text.gsub("What we're about", "")
       puts info

@@ -12,26 +12,25 @@ class CLI
     input = gets.strip
     index = input.to_i - 1 
     selection = meetups[index]
-    display_details(selection)
-    puts "For information on future meetup events, type 'event'. To go back to the main menu, type 'menu."
+    puts "You have selected #{selection}."
+    display_details(selection.name)
+    url = selection.url
+    puts "For information on future meetup events, type 'events'. To go back to the main menu, type 'menu."
     input = gets.strip
-    
-    if input == "event"
-      future_meetup_events
-    elsif input == "menu"
-      start 
-    else 
-      puts "Invalid input. Please try again"
-    end
+      case input
+        when "events"
+          Scraper.scrape_meetup_event(url)
+        when "menu"
+      end
   end
   
   def display_details(selection)
     Scraper.scrape_meetup_page(selection.url)
   end
   
-  def scrape_meetup_event
-    Scraper.scrape_meetup_event(url)
-  end
+  # def scrape_meetup_event(url)
+  #   Scraper.scrape_meetup_event(url)
+  # end
   
 end 
 
