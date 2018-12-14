@@ -27,7 +27,7 @@ class Scraper
         end
         break
       else 
-       puts "There are no events currently planned for this meetup"
+       puts "There are no events currently planned for this meetup."
        break
       end
     end

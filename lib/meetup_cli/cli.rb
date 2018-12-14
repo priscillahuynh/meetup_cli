@@ -22,20 +22,27 @@ class CLI
       case menu_input
         when "events"
           Scraper.scrape_meetup_event(selection.url)
-          puts "To go back to the main menu, type 'menu', or to exit the program type 'exit"
+          puts "To go back to the main menu, type 'menu', or to exit the program type 'exit'."
         when "menu"
           input = "menu"
       end
     end
   end
   
+  # input = gets.strip
+  
+  # if input == "menu"
+  #     start
+  # elsif input == "exit"
+  #     puts "Come back again soon!"
+  # else 
+  #     puts "Invalid input. Please try again."
+  # end
+  
+  
   def display_details(url)
     Scraper.scrape_meetup_page(url)
   end
-  
-  # def scrape_event(url)
-  #   Scraper.scrape_meetup_event(url)
-  # end
   
 end 
 
