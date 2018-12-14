@@ -12,16 +12,16 @@ class CLI
     input = gets.strip
     index = input.to_i - 1 
     selection = meetups[index]
-    binding.pry
-    # display_details(selection)
+    display_details(selection)
+    
   end
   
-    # def display_details
-      
-    # end
+  def display_details(selection)
+    Scraper.scrape_meetup(selection.url)
+  end
+  
+  def valid_input?
     
-    def valid_input?
-      
-    end
+  end
 end 
 
