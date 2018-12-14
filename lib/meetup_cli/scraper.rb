@@ -14,7 +14,15 @@ class Scraper
   
   def self.scrape_meetup_event(url)
     page = Nokogiri::HTML(open(url))
+    page.css('div.group-home').each do |activity|
+    event_activity = activity.css('.span').text.strip 
+    binding.pry
+  end
     page.css('div.bounds.bounds--wide.groupHome-nextMeetup').each do |event|
+      
+      if event.css(h3.text--sectionTitle.text--bold.padding--bottom).text.strip == nil 
+        puts "There are no events currently planned for this meetup"
+      else
       name = event.css('div.text--ellipsisTwoLines.text--heavy.text--display3').text.strip
       date_and_time = event.css('span.eventTimeDisplay-startDate').text.strip
       event_description = event.css('div.chunk.eventCard--MainContent--description.text--ellipsisFiveLines.text--small.padding--top').text.strip
@@ -22,6 +30,7 @@ class Scraper
       puts "Name: #{event.name}"
       puts "Time: #{event.date_and_time}"
       puts "Description: #{event.event_description}"
+      end
     end
   end
   
