@@ -18,7 +18,10 @@ class Scraper
       name = event.css('div.text--ellipsisTwoLines.text--heavy.text--display3').text.strip
       date_and_time = event.css('span.eventTimeDisplay-startDate').text.strip
       event_description = event.css('div.chunk.eventCard--MainContent--description.text--ellipsisFiveLines.text--small.padding--top').text.strip
-    event = Event.new(name,date_and_time,event_description)
+      event = Event.new(name,date_and_time,event_description)
+      puts "Name: #{event.name}"
+      puts "Time: #{event.date_and_time}"
+      puts "Description: #{event.event_description}"
     end
   end
   

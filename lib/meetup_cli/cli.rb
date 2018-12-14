@@ -1,6 +1,8 @@
 class CLI 
   
   def start 
+    input = "menu"
+    while input == "menu" 
     puts "Welcome to Tech Meetups in Los Angeles!"
     puts "Please select a Meetup from the list below to view details:"
     Scraper.scrape_tech_meetups
@@ -16,21 +18,23 @@ class CLI
     puts "You have selected #{selection.name}."
     display_details(selection.url)
     puts "For information on future meetup events, type 'events'. To go back to the main menu, type 'menu."
-    input = gets.strip
-      case input
+    menu_input = gets.strip
+      case menu_input
         when "events"
           Scraper.scrape_meetup_event(selection.url)
         when "menu"
+          input = "menu"
       end
+    end
   end
   
   def display_details(url)
     Scraper.scrape_meetup_page(url)
   end
   
-  def scrape_meetup_event(url)
-    Scraper.scrape_meetup_event(url)
-  end
+  # def scrape_event(url)
+  #   Scraper.scrape_meetup_event(url)
+  # end
   
 end 
 
