@@ -16,22 +16,22 @@ class CLI
     puts "For information on future meetup events, type 'event'. To go back to the main menu, type 'menu."
     input = gets.strip
     
-    # if input == "event"
-    #   future_meetup_events
-    # elsif input == "menu"
-    #   start 
-    # else 
-    #   puts "Invalid input. Please try again"
-    # end
+    if input == "event"
+      future_meetup_events
+    elsif input == "menu"
+      start 
+    else 
+      puts "Invalid input. Please try again"
+    end
   end
   
   def display_details(selection)
-    Scraper.scrape_meetup(selection.url)
+    Scraper.scrape_meetup_page(selection.url)
   end
   
-  # def scrape_meetup
-    
-  # end
+  def scrape_meetup_event
+    Scraper.scrape_meetup_event(url)
+  end
   
 end 
 

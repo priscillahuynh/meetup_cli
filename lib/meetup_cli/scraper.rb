@@ -12,11 +12,20 @@ class Scraper
       end
   end
   
-  def self.scrape_meetup(url)
+  def self.scrape_meetup_event(url)
     page = Nokogiri::HTML(open(url))
-    page.css('div.group-description--wrapper').each do |text|
-      info = text.text.gsub("What we're about", "")
+    page.css('div.bounds.bounds--wide.groupHome-nextMeetup').each do |event|
+      name = event.css('div.text--ellipsisTwoLines.text--heavy.text--display3').text.strip
+      date_and_time = event.css('span.eventTimeDisplay-startDate').text.strip
+      event_description = event.css('div.chunk.eventCard--MainContent--description.text--ellipsisFiveLines.text--small.padding--top').text.strip
+    event = Event.new(name,date_and_time,event_description)
     end
   end
   
+  def self.scrape_meetup_page(url)
+  page.css('div.group-description--wrapper').each do |text|
+      info = text.text.gsub("What we're about", "")
+      puts info
+    end
+  end
 end
