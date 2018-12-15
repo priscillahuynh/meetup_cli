@@ -1,8 +1,7 @@
 # MeetupCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/meetup_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Tech Meetups in Los Angeles! Follow the command prompts and choose from 100 different tech meetup 
+groups in Los Angeles. Learn more about what each Meetup group is about and when the next event is scheduled. 
 
 ## Installation
 
@@ -22,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Follow the command prompts to navigate through the program.
 
 ## Development
 
