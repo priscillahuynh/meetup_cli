@@ -17,7 +17,9 @@ class CLI
       
       puts "You have selected #{selection.name}."
       display_details(selection.url)
-      puts "For information on future meetup events, type 'events'. To go back to the main menu, type 'menu."
+      puts "For information on future meetup events, type 'events'." 
+      puts "To go back to the main menu, type 'menu'." 
+      puts "To leave the program at any time, type 'exit'."
       input = gets.strip
     end
       case input
@@ -28,12 +30,12 @@ class CLI
           if final_input == "menu"
             start
           elsif final_input == 'exit'
-            "Come back again soon!"
+            puts "Come back again soon!"
           end
         when "menu"
           input = "menu"
         when "exit"
-          "Come back again soon!"
+          puts "Come back again soon!"
       end
   end 
   
