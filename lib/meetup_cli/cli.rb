@@ -24,9 +24,16 @@ class CLI
         when "events"
           Scraper.scrape_meetup_event(selection.url)
           puts "To go back to the main menu, type 'menu', or to exit the program type 'exit'."
+          final_input = gets.strip
+          if final_input == "menu"
+            start
+          elsif final_input == 'exit'
+            "Come back again soon!"
+          end
         when "menu"
           input = "menu"
-        
+        when "exit"
+          "Come back again soon!"
       end
   end 
   
