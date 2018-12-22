@@ -40,7 +40,7 @@ class CLI
             puts "Come back again soon!"
               break
           end
-          
+        
         when "menu"
           input = "menu"
         when "exit"
@@ -67,6 +67,15 @@ class CLI
       puts "#{index}. #{meetup.name} with #{meetup.members}"
     end
     input = gets.strip
+    
+    loop do 
+      until (1..100).include?(input.to_i)
+      puts "Invalid input. Please try again."
+      input = gets.strip
+      end
+      break
+    end
+    
     index = input.to_i - 1 
     @selection = @meetups[index]
     puts "You have selected #{@selection.name}."
