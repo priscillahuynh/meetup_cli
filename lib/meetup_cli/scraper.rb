@@ -14,7 +14,7 @@ class Scraper
   end
   
   def self.scrape_meetup_event(url)
-        puts "SCRAPING INDIVIDUL MEETUP EVENT ***********************"
+        puts "SCRAPING INDIVIDUAL MEETUP EVENT ***********************"
 
     page = Nokogiri::HTML(open(url))
     page.css('div.group-home span').each do |activity|
