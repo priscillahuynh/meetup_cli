@@ -11,17 +11,36 @@ class CLI
       puts "To exit the program, type 'exit'."
       input = gets.strip
       
+      loop do 
+        until input == "events" || input == "menu" || input == "exit"
+        puts "Invalid input. Please try again."
+        input = gets.strip
+        end
+        break
+      end
+      
       case input
         when "events"
           Scraper.scrape_meetup_event(@selection.url)
           puts "To go back to the main menu, type 'menu', or to exit the program type 'exit'."
           final_input = gets.strip
-          if final_input == "menu"
+          
+          loop do 
+            until final_input == "menu" || final_input == "exit"
+            puts "Invalid input. Please try again."
+            final_input = gets.strip
+            end
+            break
+          end
+          
+          case final_input
+          when "menu"
             input = "menu"
-          elsif final_input == 'exit'
+          when "exit"
             puts "Come back again soon!"
               break
           end
+          
         when "menu"
           input = "menu"
         when "exit"
